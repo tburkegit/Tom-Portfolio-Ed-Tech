@@ -1,128 +1,514 @@
-/* Basic Reset */
+:root {
+    --primary-color: #30bc61;
+    --secondary-color: #259c4f;
+    --background-color: #ffffff;
+    --text-color: #1E1E1E;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', 'Inter', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    padding: 20px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+    padding: 0;
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+.about-intro {
+    font-weight: 500;
+}
+
+.about-details {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.about-conclusion {
+    font-style: italic;
+    color: var(--primary-color);
 }
 
 /* Header */
 header {
-    background: #333;
+    background: var(--primary-color);
     color: #fff;
-    padding: 20px 0;
+    padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
 }
 
 header h1 {
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.8;
 }
 
 /* Sections */
 section {
-    margin: 40px 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1200px;
 }
 
 h2 {
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
 }
 
 /* Project Grid */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 .project-card {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
-    color: #333;
-    margin-bottom: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .project-card p {
-    color: #666;
-    margin-bottom: 20px;
+    color: #64748b;
+    margin-bottom: 1.5rem;
 }
 
 .tech-stack {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .tech {
-    background: #e9ecef;
-    color: #495057;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.9em;
+    background: #e2e8f0;
+    color: #475569;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .project-link {
     display: inline-block;
-    padding: 8px 16px;
-    background: #007bff;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
 }
 
 .project-link:hover {
-    background: #0056b3;
+    background: var(--secondary-color);
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    margin: 1.5rem 0;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.download-btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background: #333;
+    padding: 1.5rem;
+    background: var(--primary-color);
     color: #fff;
+    margin-top: 3rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    section {
+        padding: 1rem;
+    }
+    
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 0.75rem;
     }
     
     .project-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Image Styles */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    max-height: none;
+    object-fit: contain;
+    margin: 1rem 0;
+}
+
+.student-resources h3 {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.student-resources img {
+    max-height: 800px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 2rem 0;
+}
+
+.student-resources .instructions-image {
+    max-height: 800px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 2rem 0;
+}
+
+.teacher-example-image {
+    max-height: 1000px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 2rem 0;
+}
+
+.image-caption-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.image-caption-container img {
+    max-height: 600px !important;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.handouts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.handouts-grid img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: contain;
+}
+
+/* Student Work Gallery */
+.student-work {
+    margin: 4rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    opacity: 0.7;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .lightbox-nav {
+        font-size: 30px;
+        padding: 8px;
+    }
+    
+    .lightbox-close {
+        font-size: 30px;
+        top: 15px;
+        right: 20px;
+    }
+}
+
+.project-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.project-overview > div:first-child {
+    padding-right: 2rem;
+}
+
+.featured-student-work {
+    margin: 0;
+    height: 100%;
+}
+
+.featured-student-work {
+    margin: 2rem 0;
+}
+
+.featured-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featured-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.featured-content {
+    padding: 1.5rem;
+}
+
+.featured-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.featured-content p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .featured-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    
+    .featured-image {
+        height: 100%;
+        border-bottom: none;
+        border-right: 3px solid var(--primary-color);
+    }
+    
+    .featured-content {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .project-overview {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+    
+    .image-container {
+        margin: 0;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    .responsive-image {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .image-container {
+        margin: 1rem -1rem;
+        border-radius: 0;
+        padding: 0.5rem;
+    }
+    
+    .responsive-image {
+        max-height: 250px;
     }
 }
