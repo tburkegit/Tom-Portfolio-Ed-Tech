@@ -218,6 +218,19 @@ footer {
 }
 
 /* Image Styles */
+.centered-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.instruction-description {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
 .responsive-image {
     width: 100%;
     height: auto;
@@ -510,5 +523,42 @@ footer {
     
     .responsive-image {
         max-height: 250px;
+    }
+}
+
+/* Project Image Styles */
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .project-content {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: start;
+    }
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+.project-text {
+    order: -1;
+}
+
+@media (min-width: 768px) {
+    .project-text {
+        order: 0;
     }
 }
